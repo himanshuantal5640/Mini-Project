@@ -1,0 +1,11 @@
+.pagination {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.page-info {
+  font-weight: 500;
+}
+
