@@ -21,9 +21,64 @@ body {
   margin-top: 20px;
 }
 
+.history-btn {
+  display: inline-block;
+  padding: 6px 14px;
+  margin-left: 8px;
+  background-color: rgb(69, 69, 69);
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1em;
+  border: none;
+  cursor: pointer;
+}
+
+.history-btn:hover {
+  background-color: rgb(50, 50, 50);
+}
+
 #suggestions {
   /* margin-top: 10px; */
   background-color: white;
   border: 1px solid #ccc;
   max-width: 169px;
+}
+
+/* History page */
+#historyContainer {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.history-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background-color: rgb(252, 248, 241);
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.history-query {
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.history-query:hover {
+  text-decoration: underline;
+}
+
+.history-time {
+  color: #666;
+  font-size: 0.9em;
+}
+
+.empty-history {
+  color: #666;
+  padding: 20px;
 }
