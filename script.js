@@ -12,6 +12,25 @@ fetch("https://dummyjson.com/products")
                 <p>$${product.price}</p>
                 `;
       box.appendChild(card);
+      card.addEventListener("click", () => {
+        console.log("card clicked", product.id);
+        
+        // Save to view history
+        let viewHistory = JSON.parse(localStorage.getItem("viewHistory")) || [];
+        const alreadyExists = viewHistory.some((item) => item.productId === product.id);
+        if (!alreadyExists) {
+          viewHistory.push({
+            productId: product.id,
+            title: product.title,
+            thumbnail: product.thumbnail,
+            price: product.price,
+            time: Date.now()
+          });
+          localStorage.setItem("viewHistory", JSON.stringify(viewHistory));
+        }
+        
+        window.location.href = `product.html?id=${product.id}`;
+      });
     });
   })
   .catch((err) => console.log(err));
@@ -40,23 +59,19 @@ searchBtn.addEventListener("click", () => {
   searchInput.value = "";
 });
 
-//suggestions feature
+// Suggestions feature
 const suggestionBox = document.getElementById("suggestions");
 searchInput.addEventListener("input", () => {
-  // console.log("Input event triggered");
-
   const text = searchInput.value.toLowerCase();
   let history = JSON.parse(localStorage.getItem("searchHistory")) || [];
-  // console.log("Search history:", history);
-  
 
-  //Filter based on query field
+  // Filter based on query field
   const matches = history.filter(item => item.query.toLowerCase().includes(text));
-  // console.log("Matching suggestions:", matches);
-  //clear previous suggestions
+  
+  // Clear previous suggestions
   suggestionBox.innerHTML = "";
 
-  //show suggestions
+  // Show suggestions
   matches.forEach(item => {
     const div = document.createElement("div");
     div.className = "suggestion-item";
@@ -70,4 +85,3 @@ searchInput.addEventListener("input", () => {
     suggestionBox.appendChild(div);
   });
 });
-
