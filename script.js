@@ -67,3 +67,4 @@ searchInput.addEventListener("input", () => {
     suggestionBox.appendChild(div);
   });
 });
+

@@ -20,3 +20,10 @@ body {
   gap: 20px;
   margin-top: 20px;
 }
+
+#suggestions {
+  /* margin-top: 10px; */
+  background-color: white;
+  border: 1px solid #ccc;
+  max-width: 169px;
+}
