@@ -27,7 +27,7 @@ body {
   display: inline-block;
   padding: 6px 14px;
   margin-left: 8px;
-  background-color: rgb(69, 69, 69);
+  background-color: #007bff; /* blue when enabled */
   color: white;
   text-decoration: none;
   border-radius: 5px;
@@ -37,7 +37,7 @@ body {
 }
 
 .history-btn:hover {
-  background-color: rgb(50, 50, 50);
+  background-color: #0056b3;
 }
 
 #suggestions {
@@ -94,9 +94,19 @@ body {
   cursor: pointer;
   font-size: 1em;
 }
-
 .clear-history-btn:hover {
   background-color: rgb(200, 35, 51);
+}
+
+.history-btn:disabled,
+.history-btn[disabled] {
+  background-color: #6c757d; /* grey when disabled */
+  cursor: not-allowed;
+}
+
+.history-btn:disabled:hover,
+.history-btn[disabled]:hover {
+  background-color: #6c757d;
 }
 
 /* View History page */
@@ -214,3 +224,4 @@ body {
 .back-link:hover {
   text-decoration: underline;
 }
+

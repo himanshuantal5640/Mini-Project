@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Store</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="pagination.css">
 </head>
 
 <body>
@@ -15,9 +16,14 @@
     <a href="history.html" class="history-btn">Search History</a>
     <a href="viewHistory.html" class="history-btn">View History</a>
     <div id="suggestions"></div>
-    <div class="box">
+    <div class="box"></div>
+    <div id="pagination" class="pagination">
+        <button id="prevBtn" class="history-btn">Prev</button>
+        <span id="pageInfo" class="page-info"></span>
+        <button id="nextBtn" class="history-btn">Next</button>
     </div>
     
+    <script src="pagination.js" defer></script>
     <script src="script.js" defer></script>
 </body>
 
